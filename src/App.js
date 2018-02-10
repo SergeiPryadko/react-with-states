@@ -7,34 +7,33 @@ import HomePage from "./containers/HomePage/index";
 import About from "./containers/About/index";
 
 class App extends Component {
-  render() {
-    const navList = [
-      {
-        name: 'Home',
-      },
-      {
-        name: 'About',
-      },
-      {
-        name: 'Contact',
-      },
-    ];
-    return (
-      <Router>
-        <div className='App'>
-          <Header
-            showLogo
-            title='HomePage'
-            navList={navList}
-            handleClick={this.handleClickHeader}
-          />
-          <Route exact path="/" component={HomePage} />
-          <Route path="/about" component={About} />
-        </div>
-      </Router>
-    );
-  }
-
+    render() {
+        const navList = [
+            {
+                name: 'Home',
+            },
+            {
+                name: 'About',
+            },
+            {
+                name: 'Contact',
+            },
+        ];
+        return (
+            <Router>
+                <div className='App'>
+                    <Header
+                        showLogo
+                        title='HomePage'
+                        navList={navList}
+                        handleClick={this.handleClickHeader}
+                    />
+                    <Route exact path="/" component={HomePage} />
+                    <Route path="/about" component={About} />
+                </div>
+            </Router>
+        );
+    }
 }
 
 export default App;
