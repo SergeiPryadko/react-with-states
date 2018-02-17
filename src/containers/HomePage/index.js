@@ -98,15 +98,19 @@ class HomePage extends Component {
     }
 
     sort = (type) => {
-        const data = this.initialData;
-        console.log('sort', this.initialData);
+        const data = this.state.data.slice(0); // or Array.from(this.state.data)
+
         const sorted = data.sort((a, b) => {
+            if (a[type] === b[type]) {
+                return 0;
+            }
             return a[type] > b[type] ? 1 : -1;
         });
-        this.setState({
-            data: sorted,
-        })
-    }
+
+        this.updateApp({
+            data: sorted
+        });
+    };
 
     reset = () => {
         console.log('initialData', this.initialData);
