@@ -171,6 +171,7 @@
 
 .dropdown {
   &__head {
+    width: 100%;
     padding: 15px;
     min-height: 42px;
     border-radius: 5px;
@@ -178,5 +179,41 @@
   }
   &__content {
     padding: 10px;
+  }
+}
+
+.about__header {
+  text-align: center;
+  padding: 15px;
+}
+
+.rowButton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.about__content {
+  display: flex;
+  flex: 1 1;
+  padding: 15px;
+}
+
+.wrapDropDown {
+  margin-right: 15px;
+  width: 25%;
+  paddding: 15px;
+}
+
+.wrapUsers {
+  width: 75%;
+  border: 1px solid #eaeaea;
+  .usersHeader {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eaeaea;
+    &__title {
+      font-weight: bold;
+      font-size: 20px;
+    }
   }
 }

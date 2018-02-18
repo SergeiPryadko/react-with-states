@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import {
     Dropdown,
+    ModalUsers,
 } from '../../components';
 
 const listDropdowns = [
@@ -47,12 +48,9 @@ class About extends Component {
                 <div className="about__header">
                     <h1>About Page</h1>
                 </div>
+                <ModalUsers />
                 <div className="about__content">
                     <div className="wrapDropDown">
-                        <input type='text' ref={(input) => {this.userInput = input}} />
-                        <button onClick={this.addUser}>
-                            Add user
-                        </button>
                         {
                             listDropdowns.map((item, index) => {
                                 return (
