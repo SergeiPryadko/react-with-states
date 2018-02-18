@@ -19,6 +19,8 @@ const listDropdowns = [
 ];
 
 class About extends Component {
+    userInput = {};
+
     constructor(props) {
         super(props);
         this.state = {
@@ -37,18 +39,21 @@ class About extends Component {
 
     addUser = () => {
         console.log('Add USER click', this.props);
-        this.props.addUser(this.userInput.value);
-        this.userInput.value = '';
+        this.props.addUser(this.userInput.input.value);
+        this.userInput.input.value = '';
     }
 
     render() {
-        console.log('-------', this.props.users);
+        console.log('-------', this.userInput);
         return (
             <div className='about'>
                 <div className="about__header">
                     <h1>About Page</h1>
                 </div>
-                <ModalUsers />
+                <ModalUsers
+                    addUser={this.addUser}
+                    userInput={this.userInput}
+                />
                 <div className="about__content">
                     <div className="wrapDropDown">
                         {
