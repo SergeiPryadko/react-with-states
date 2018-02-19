@@ -92,6 +92,7 @@ class About extends Component {
 export default connect(
     state => ({
         users: state.users,
+        modal: state.modal,
     }),
     dispatch => ({
         addUser: (userName) => {

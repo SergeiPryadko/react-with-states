@@ -1,14 +1,14 @@
 const initialState = {
-    modalType: null,
-    modalProps: {}
+    isOpen: true,
+    massage: {}
 }
 
 export default function modal(state = initialState, action) {
     switch (action.type) {
         case 'SHOW_MODAL':
             return {
-                modalType: action.modalType,
-                modalProps: action.modalProps
+                ...state,
+                action: modal,
             }
         case 'HIDE_MODAL':
             return initialState
